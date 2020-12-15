@@ -21,7 +21,7 @@ class FiguresController < ApplicationController
   post '/figures' do
     @figure = Figure.create(params['figure'])
     unless params[:landmark][:name].empty?
-      @figure.landmarks << Figure.create(params[:landmark])
+      @figure.landmarks << Landmark.create(params[:landmark])
     end
 
     unless params[:title][:name].empty?
